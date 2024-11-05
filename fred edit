@@ -1,0 +1,63 @@
+//Arduino Sketch code by: Jawad Farooq Naik
+//Date: Tuesday, Nov 5 2024
+//Location: Boston, MA, USA
+//Project: Feelio Installation. (DMI Thesis)
+//Hardware: 4servos, PIR Sensor, Arduino UNO
+
+#include <Servo.h>
+
+Servo servo1;
+Servo servo2;
+Servo servo3;
+Servo servo4;
+
+const int pirPin = 12;              // PIR sensor pin
+const int delayAfterMotion = 1000;  // Delay after motion detected (1 minute) - use 1000 for testing
+
+void setup() {
+  Serial.begin(9600);  // Start serial communication for debugging
+
+  // Attach each servo to its corresponding pin
+  servo1.attach(3);
+  servo2.attach(11);
+  servo3.attach(6);
+  servo4.attach(9);
+
+  pinMode(pirPin, INPUT);  // Set PIR sensor pin as input
+
+  Serial.println("System initialized. Waiting for motion...");
+}
+
+void loop() {
+  // Read the PIR sensor state
+  int motionDetected = digitalRead(pirPin);
+  Serial.print("sensor ");
+  Serial.println(motionDetected);
+  delay(100);
+
+  motionDetected = 1;
+
+  if (motionDetected == HIGH) {  // If motion is detected
+
+    int angle1 = random(10, 170);
+    Serial.print(angle1);
+    Serial.print(" ");
+    servo4.write(random(angle1));
+
+    int angle2 = random(10, 170);
+    Serial.print(angle2);
+    Serial.print(" ");
+    servo4.write(random(angle2));
+
+    int angle3 = random(10, 170);
+    Serial.print(angle3);
+    Serial.print(" ");
+    servo4.write(random(angle3));
+
+    int angle4 = random(10, 170);
+    Serial.println(angle4);
+    servo4.write(random(angle4));
+
+    delay(500);  // Hold all servos briefly
+  }
+}
