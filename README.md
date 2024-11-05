@@ -9,10 +9,10 @@ Department: DMI Dynamic Media Institute
 
 Description: 
 
-This installation is designed to hang on your wall. It consists of a series of small canvases
-connected to servos, which move back and forth in response to body motion detected by a bracelet 
-worn by a person miles away from home. This setup creates a sense of physical presence in the
-house, even when the person is absent.
+Feelio is an installation, that is designed to hang on your wall. It consists of a series of small canvases
+connected to servos, which move back and forth in response to body motion detected by a bracelet w/ accelerometer
+worn by a person miles away from home. This setup creates a sense of physical presence in the house, even when the 
+person is absent.
 
 Hardware for Prototype v1: 
 
